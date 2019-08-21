@@ -176,15 +176,20 @@ file for this:
 
 ```
 // declare the string pointer
-char * bin_str; ```
+char * bin_str; 
+```
 
 ```
 // create the string by calling a function from binary_convert.h
-bin_str = nibble_to_bin_str(i); ```
+bin_str = nibble_to_bin_str(i); 
+```
 
 ```
 // After using bin_str, remove it from memory. 
-free(bin_str); ``` After free, bin_str is NULL until its memory is recreated.
+free(bin_str); 
+``` 
+
+After free, bin_str is NULL until its memory is recreated.
 You can re-use bin_str again, but must do so by calling one of the functions in
 binary_convert.h to re-populate it with a new value.
 
