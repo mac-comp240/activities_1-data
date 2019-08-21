@@ -177,7 +177,9 @@ above (you will need to create variables x, y, and result first):
 	// 4. free up memory for the result string, because we will create more
 	free(bin_str_result);
 	// 5. assert to test the result
-	assert(result == 0x20); ```
+	assert(result == 0x20); 
+	
+	```
 
 ### Using assertions in C
 
