@@ -116,8 +116,8 @@ will need to do this for every code file that you write for this course.
 
 2. Next in test.c focus your attention on two functions, one that is complete,
 called *c_utype_sizes()*, and one that you will finish, called
-*c_stype_sizes()*.Study the first of these and notice three important aspects of
-this code:
+*c_stype_sizes()*. Study the first of these and notice three important aspects
+of this code:
 
 	- The printf function takes a string in quotes containing zero or more
 	  optional **format specifiers** that begin with a % sign. 
@@ -245,7 +245,7 @@ Our goal for testing will be to use exclusively assert() statements so that our
 test program runs with a minimum of output. Work toward that goal as you
 complete these functions.
 
-You should Eventually complete the rest of the test suite by writing
+You should eventually complete the rest of the test suite by writing
 documentation for and completing the tests of the **signed** data type values
 that are inputs to the rest of the functions documented in binary_convert.h. You
 will want to do this after we study signed two's complement numbers next.
