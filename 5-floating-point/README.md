@@ -22,7 +22,7 @@ You should be able to compile and run this code as is.  Familiarize yourself wit
 
 For this activity, it is useful to also recall that the floating point numbers fall into several categories, each of which encodes the above pieces differently and which represent a range of possible represented values as follows:
 
-![.guides/img/displayimage](.guides/img/FPRangeLine.png)
+![Floating Point Representation](./img/FPRangeLine.png)
 
 You will now investigate each of these encodings by considering their bit level representations, just like the machine does.
 
