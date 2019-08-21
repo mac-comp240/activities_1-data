@@ -89,7 +89,7 @@ Convert those bit patterns to hexadecimal values and try them in main, using
 `float_denorn_zero()` as illustrated in the code.  Try some additional values
 within the range of denormalized values.
 
-### Part 2 Normalized numbers
+## Part 2: Normalized numbers
 
 Now let's turn our attention to the normalized numbers. Consider the following
 questions for review:
@@ -109,18 +109,18 @@ Convert the largest and smallest normalized values, both positive and negative,
 into their hex values and test out `float_denorn_zero()`.
 
 
-### Part 3 Infinity and NaN 
+## Part 3: Infinity and NaN 
 
 Test for infinity or NaN. How might you write a
 similar function to test whether a value is either infinity or NaN (not a
 number)?  Write this and test it out.
 
-### Part 4 Negation
+## Part 4: Negation
 
 Complete the function called float_negate and test it in main(). This also
 illustrates how the machine would perform this operation.
 
-### Part 5 (challenge if you have time)
+## Part 5: Challenge
 
 Do this if you really want a challenge: Generate range of possible values and
 check.
