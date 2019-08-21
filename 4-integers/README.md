@@ -108,7 +108,7 @@ program called less:
 Hitting the Q key will quit out of less. Space bar scrolls down, control-b or
 control-u goes back up.
 
-# Avoiding Overflow in a loop
+## After running: Avoiding Overflow in a loop
 
 There are a few ways to avoid having this loop run infinitely. Here is one that
 works fairly well. Add this to the bottom of the loop just before it goes back
@@ -120,7 +120,7 @@ around:
 
 ```
 
-You can also change the loop to do one few value, then print the last one
+You can also change the loop to do one fewer value, then print the last one
 outside of the loop.
 
 
