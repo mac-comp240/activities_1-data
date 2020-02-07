@@ -54,7 +54,7 @@ void c_utype_sizes() {
  * Display the minimum and maximum limits and size in bytes of the C 
  * **signed** integral types (char, short, int, and long).
  * 
- * TODO: complete this function
+ * TODO: complete this function (char given)
  */
 void c_stype_sizes() {
 	
@@ -104,8 +104,8 @@ int main() {
 	printf("result of incorrect input 16: %s\n", bin_str);    // solution
 	free(bin_str);                                         // keep
 	
-	bin_str = nibble_to_bin_str(32);                       // solution
-	printf("result of incorrect input 32: %s\n", bin_str);    // solution
+	bin_str = nibble_to_bin_str(-2);                       // solution
+	printf("result of incorrect input -2: %s\n", bin_str);    // solution
 	free(bin_str);                                         // keep
 	
 	printf("\n");  // add a blank line to output

@@ -48,16 +48,15 @@ void c_utype_sizes() {
  * Display the minimum and maximum limits and size in bytes of the C 
  * **signed** integral types (char, short, int, and long).
  * 
- * TODO: complete this function
+ * Task 2 TODO: complete this function (char given)
  */
 void c_stype_sizes() {
 	
 	printf("type   |   minimum            |   maximum            | size (bytes)\n");
-	// solution
+	
 	printf(" char  | %-21hhd| %-21hhd| %zu\n", SCHAR_MIN, SCHAR_MAX, sizeof( signed char));
-	printf(" short | %-21hd| %-21hd| %zu\n", SHRT_MIN, SHRT_MAX, sizeof( short));
-	printf(" int   | %-21d| %-21d| %zu\n", INT_MIN, INT_MAX, sizeof( int));
-	printf(" long  | %-21ld| %-21ld| %zu\n", LONG_MIN, LONG_MAX, sizeof( long));
+	// solution here
+	
 	// solution
 }
 

@@ -24,7 +24,7 @@ integral data:
 - You will try using printf to print each of these data types.
 
 - You will observe the number of bytes allotted for each of these types in C on
-  the linux instance of codio.
+  the linux server.
 
 - You will use a provided *library* of functions that is designed to create
   strings of characters that represent the underlying binary representation  of
@@ -275,20 +275,19 @@ the functions in binary_convert.c/h were all completely correct was to do this
 exhaustive testing. The author discovered a few small elusive bugs that she had
 to fix before this code passed all the tests!
 
-## Re-generating the Documentation
+## Commenting for later Documentation
 
-You will add comments that document the remaining test functions by placing
+You should add comments that document the remaining test functions by placing
 comments like this in front of a function:
 
-```
-/** Describe inputs and return values and what the function does -- this comment
- * must start with /**, just like javadoc comments
- */
-```
 
-You can re-generate the documentation by clicking on the button in the menu in
-codio that says Generate new documentation. Then you can view the new results by
-clicking on the button next to it in the menu that says Doc.
+	/** Describe inputs and return values and 
+	 * what the function does -- this comment
+	 * must start with /**, just like 
+	 * javadoc comments
+	 */
+
+There are ways to generate documentation for C code that contains these comments. You could explore this on your own if you'd like. The program to do this on linux machines is called doxygen.
 
 ### References
 
