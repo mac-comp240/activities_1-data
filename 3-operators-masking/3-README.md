@@ -24,15 +24,12 @@ attempt in these problems, we have included files called *binary_convert.c*  and
 *binary_convert.h* from Data activity 1 that have functions that can build up a
 string of the binary representation of given C integral data type value. 
 
-As with data activity 1, you can view the documentation for binary_convert.h by
-picking the Doc button in the menu bar and choosing Files from the doxygen html
-page.
 
 # Problem 1
 
 **Code file you create yourself:** bit_logical.c
 
-Use the File menu to create this new C code file. To get started considering
+Right-click on the folder named 3-operators-masking or use the File menu to create this new C code file, named bit_logical.c. To get started considering
 what needs to be in this file, you can look at the original "hello world"
 example from early in the course- it is in the folder called hello. You can also
 look at the starter code for the next 2 problems. These are the files shifts.c
@@ -49,15 +46,16 @@ them in your code to more easily check if the answers match what you expect to
 get. However, as you will see, starting with printing the binary representations
 as strings can initially be useful to visualize how the operators work.
 
-## For this and the following exercises, please complete a Makefile There is a
-very basic start in the makefile provided. You will need to do the following:
+## For this and the following exercises, please complete a Makefile 
+
+There is a very basic start in the makefile provided. You will need to do the following:
 
 1. Fill in the rest of target executable program called `bit_logical` that
 corresponds with your *bit_logical.c* file.  Note that the line that starts with
 all:  contains this target. You will add more executables to this line as you
 complete each problem in this activity. To complete this, you will need to add a
-line below the line  with the target (bit_logical), a colon (:), and the C file
-that the target depends on (bit_logical.c). The line below this must start with
+line below the line already given with the target (bit_logical), a colon (:), and the C files
+that the target depends on (bit_logical.c, binary_convert.c, binary_convert.h). The line below this must start with
 a tab, and then contain the directive to compile C code file into the target
 executable, using the gcc compiler. In this case, this will look like this:
 
@@ -150,13 +148,23 @@ y</td> <td></td> </tr> <tr> <td>x | y</td> <td></td> </tr> <tr> <td>~x | ~y</td>
 #### Suggested initial printf output format You could start by using the
 functions in binary_convert.h/c to print the bytes and the operation out like
 this so that you can see each bitwise operation result along with its hex value:
+```
+0110 0110 & 
+0011 1001 
+---------
+0010 0000     20
 
-	  0110 0110 & 0011 1001 --------- 0010 0000     20
+0110 0110 | 
+0011 1001 
+--------- 
+0111 1111     7f
 
-	  0110 0110 | 0011 1001 --------- 0111 1111     7f
+1001 1001 | 
+1100 0110 
+--------- 
+1101 1111     df
+```
 
-	  1001 1001 | 1100 0110 --------- 1101 1111     df
-	  
 Then practice adding asserts along with the prints of the results, as explained
 below. After the first 3 cases above, the rest are fairly easy to simply write
 asserts for (instead of printing the result). You will need to recall what the
@@ -167,13 +175,16 @@ Here is the code to generate the output for the first of the 3 examples shown
 above (you will need to create variables x, y, and result first):
 
 ```
-// do 5 steps for each bitwise operation 1. get a result
+// do 5 steps for each bitwise operation 
+// 1. get a result
 result = x & y;
 // 2. convert to a string
 bin_str_result = uchar_to_bin_str(result);
 // 3. print x, y, and result
-printf("  %s\n", bin_str_x);          printf("& %s\n", bin_str_y);
-printf("  ---------\n"); printf("  %s\t%x\n\n", bin_str_result, result);
+printf("  %s\n", bin_str_x);          
+printf("& %s\n", bin_str_y);
+printf("  ---------\n"); 
+printf("  %s\t%x\n\n", bin_str_result, result);
 // 4. free up memory for the result string, because we will create more
 free(bin_str_result);
 // 5. assert to test the result

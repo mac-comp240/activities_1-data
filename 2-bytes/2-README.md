@@ -1,26 +1,16 @@
-Work on this activity as much as you wish in order to understand how integers
-and strings are represented on the machine and to begin to see the many new and
-different aspects of coding in C.
+Work on this activity as much as you wish in order to understand how integers and strings are represented on the machine and to begin to see the many new and different aspects of coding in C.
 
 ## 1. Which end? 
 
-Open the *show-bytes.c* file. This is directly from your book (figure 2.4
-shows a portion of it).  Examine this file and become familiar with it.  Notice
-that the file called test.c uses the functions in the show-bytes file. This will
-be a common way that you will separate your code. 
+Open the *show-bytes.c* file. This is directly from your book (figure 2.4 shows a portion of it).  Examine this file and become familiar with it.  Notice that the file called test.c uses the functions in the show-bytes file. This will be a common way that you will separate your code. 
 
-Use make in the terminal to build these code files before you make any changes
-to it. Simply access this directory in your terminal and type:
+Use make in the terminal to build these code files before you make any changes to it. Simply access this directory in your terminal and type:
 
 	make
 
-Study the makefile to see how we can have code in 2 files and compile them
-together into one executable.
+Study the makefile to see how we can have code in 2 files and compile them together into one executable.
 
-Study the code carefully. Discuss with your neighbor: what aspects of the C
-language that you see are unfamiliar? If you cannot determine what they mean or
-what some part of the code is doing, try to find an answer or ask your
-instructor. 
+Study the code carefully. Discuss with your neighbor: what aspects of the C language that you see are unfamiliar? If you cannot determine what they mean or what some part of the code is doing, try to find an answer or ask your instructor. 
 
 Run show-bytes and use the results to answer this question: 
 
@@ -93,4 +83,8 @@ Answer these questions:
 
 * How is the value for the pointer increasing in this loop? Discuss in terms of
 bytes.
+
+## 4. Make the code work for long ints
+
+Consider adding a function to show all the bytes of a long variable. Change main() to use it.
 
