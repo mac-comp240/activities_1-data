@@ -1,4 +1,6 @@
-# Integer representations
+# Data Activity 1: Integer representations
+
+Folder: `1-notation`
 
 This is an introduction to operations on integers and alternative representations of integer values.
 
@@ -46,16 +48,15 @@ This enables us to use the functions declared in binary_convert.h and fully defi
 ### Warning 
 
 The code in binary_convert.c uses some operators and functions that
-you are not yet familiar with. Note however, that each function is documented to explain what the input parameter is and what it returns. You therefore can use
-these functions and write some tests to determine if they work properly.
+you are not yet familiar with. Note however, that each function is documented to explain what the input parameter is and what it returns. You therefore can use these functions and write some tests to determine if they work properly.
 
 
 
 ## Multiple .c files make one executable program
 
-Examine the code in the file called test.c and hex.c. In a moment you will use `make` to build it before you change any code. Examine the Makefile to see how three C code files are used to create one binary using gcc. Notice how the file called test.c uses the functions in the file called hex.c and tests them out.
-T
-he file called hex.c uses functions in the file called binary_convert.c. The test.c file also uses functions in binary_convert.c as a means of testing them for accuracy.
+Examine the code in the file called `test.c` and `hex.c`. In a moment you will use `make` to build it before you change any code. Examine the Makefile to see how three C code files are used to create one binary using gcc. Notice how the file called test.c uses the functions in the file called hex.c and tests them out.
+
+The file called `hex.c` uses functions in the file called `binary_convert.c`. The test.c file also uses functions in 1binary_convert.c1 as a means of testing them for accuracy.
 
 Open the Makefile. The executable program to be built is called `bin_hex`. Since this Makefile has the executable named `bin_hex` as the first target before the : in this file, you can simply build it by typing this at the terminal:
 
@@ -100,8 +101,7 @@ Note in the code file that there are places with comments labeled TODO. These ex
 
 ### Important 
 
-The functions in binary_convert.h generate C text strings that are allocated in memory such that you must remove it with a function called *free*. **Every time you call a function from binary_convert.h and are done using its return value, you must dispose of the memory.** Note the pattern in the hex.c
-file for this:
+The functions in binary_convert.h generate C text strings that are allocated in memory such that you must remove it with a function called *free*. **Every time you call a function from binary_convert.h and are done using its return value, you must dispose of the memory.** Note the pattern in the hex.c file for this:
 
 ```
 // declare the string pointer
@@ -124,14 +124,12 @@ After free, bin_str is NULL until its memory is recreated. You can re-use bin_st
 
 ### Important 
 
-Although you could test any positive integer greater than 15, a
-very useful **edge case** is to try 16. This is because a possible coding mistake that is common is to accidentally get the edge of the limits incorrect in an if statement.
+Although you could test any positive integer greater than 15, a very useful **edge case** is to try 16. This is because a possible coding mistake that is common is to accidentally get the edge of the limits incorrect in an if statement.
 
 Note that in hex_table we have tested the other edge cases that are appropriate here: 0 and 15. Convince yourself why this is so.
 
 5. The *nibble_to_bin_str()* function can be tested thoroughly by trying all possible valid inputs and one edge case and another invalid input. As the range of numbers whose binary representation we want to test out increase, it becomes
-harder and harder to write tests that **print** results for all possible values. We can still get away with it for unsigned char data types, whose values range from 0 to 255. Complete the function in hex.c called *print_all_pos_bytes* that
-will loop through all 256 values and print them, which effectively tests all input to the function *uchar_to_bin_str()* documented in binary_convert.h. Uncomment the call to *print_all_pos_bytes* in test.c under the section labeled Task 5 to test your work.
+harder and harder to write tests that **print** results for all possible values. We can still get away with it for unsigned char data types, whose values range from 0 to 255. Complete the function in hex.c called *print_all_pos_bytes* that will loop through all 256 values and print them, which effectively tests all input to the function *uchar_to_bin_str()* documented in binary_convert.h. Uncomment the call to *print_all_pos_bytes* in test.c under the section labeled Task 5 to test your work.
 
 6. Your previous task demonstrates the extent to which we want to attempt printing out all possible values that a function could produce. We might even argue that this much printing is overkill and certainly very tedious to read through all 256 lines of output. It is a reasonable first try, but we can do better and must do so for bigger values. So Now we will move towards a form of testing that covers the **edge cases** and some in between as a mechanism for a creating a reasonably complete test suite of each function documented in binary_convert.h. 
 
@@ -167,8 +165,7 @@ Scroll to the "Check your work" section of this README to learn about the soluti
 
 This activity is a guide for how you will work on homework assignments before submitting them. *Please note that for most homework assignments we will expect you to have complete tests in your test.c file*. We will often have a full set of tests of our own that we will try when grading the code that you submit.
 
-**Fun Fact:** When preparing this activity for you, the only way to ensure that the functions in binary_convert.c/h were all completely correct was to do this exhaustive testing. The author discovered a few small elusive bugs that she had
-to fix before this code passed all the tests!
+**Fun Fact:** When preparing this activity for you, the only way to ensure that the functions in binary_convert.c/h were all completely correct was to do this exhaustive testing. The author discovered a few small elusive bugs that she had to fix before this code passed all the tests!
 
 ## Commenting for later Documentation
 
@@ -217,5 +214,5 @@ To get back out of the solution directory, you can do the following:
 	
 ### Warning 
 
-    We will not always provide solutions for every activity. We will do it here at the beginning so that you can have a reference example for thorough testing.
+We will not always provide solutions for every activity. We will do it here at the beginning so that you can have a reference example for thorough testing.
 

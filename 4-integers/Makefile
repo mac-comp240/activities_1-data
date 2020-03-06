@@ -8,4 +8,4 @@ twos_comp: test_tc.c binary_convert.c
 	${CC} -o twos_comp test_tc.c binary_convert.c
 
 clean:
-	rm twos_comp
+	rm -f twos_comp

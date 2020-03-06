@@ -1,8 +1,9 @@
+# VS Code
+.vscode
+sftp.json
+# Atom
+.remote-sync.json
+.ftpconfig
+
 .DS_Store
-.codio
-.guides
-.settings
-html/
-Doxyfile
-*~
-*.swp
+

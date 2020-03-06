@@ -49,7 +49,7 @@ int main() {
 
 
   // determine four small values that should be denormalized (positive and negative) and
-  // another that should not. (see description of data activity 6)
+  // another that should not. (see description in data activity README)
   // execute the float_denorn_zero function on each and print result
 
   value = 0x12345678;
