@@ -14,7 +14,8 @@
 /******************************************************************************
  *  Some notes about style:
  *  	-Don't have your lines be any longer than 80-90 characters
- *  	 (many editors show a column number and can indicate the right edge for you)
+ *  	 (many editors show a column number and can indicate the right 
+ *        edge for you)
  *  	-Have a descriptive comment for each function
  *  	-Describe typedef definitions
  *  	-comment inline when explanation is warranted

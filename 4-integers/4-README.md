@@ -65,7 +65,8 @@ Looking at ranges of numbers and observing overflow The last part of the main fu
 
 Values declared to be `signed char` type are 1 byte long, or 8 bits.  What happens when you change the range in the for loop to go through all values in the range of signed chars, which is -128  through 127.  Make the new version and run it inside the terminal. 
 
-IMPORTANT Note: control-c will quit any running program on the command line.
+### STOPPING RUNAWAY CODE
+IMPORTANT Note: control-c will quit any running program on the command line. You may need to wait quite a bit for the command prompt to come back, but it will eventually.
 
 Work through in your mind what is happening when you try using the full range of values in the for loop. Discuss this with your neighbors. Improve the code and try again. 
 
