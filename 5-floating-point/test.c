@@ -38,7 +38,7 @@ int main() {
   // 0100 0110  0110  1101  1011  0100  0000 0000
   //  4    6      6    d      b     4     0    0
   //
-  // -15213 is C66DB400
+  // For a *NEGATIVE* value: -15213 is 0xC66DB400
   show_float(15213.0);    //remember that this prints bytes in the opposite direction
   value = 0x466db400;
   float_bits result = float_denorn_zero(value);
