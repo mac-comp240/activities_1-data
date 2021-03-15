@@ -1,6 +1,6 @@
 # Data Activity 4: getting deep into integers
 
-Folder: `4-integers`
+In this activity, you are provided working source code. You will modify the code to illustrate the representation principles of signed vs. unsigned integers, widening and narrowing during casting, and the limits/boundaries of different integer data types.
 
 ## Part 1: examine differences between signed and unsigned
 
