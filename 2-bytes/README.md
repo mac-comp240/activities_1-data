@@ -2,11 +2,11 @@
 
 Folder: `2-bytes`
 
-Work on this activity as much as you wish in order to understand how integers and strings are represented on the machine and to begin to see the many new and different aspects of coding in C.
+Work on this activity in order to understand how integers and strings are represented on the machine and to practice coding in C.
 
 ## 1. Which end? 
 
-Open the *show-bytes.c* file. This is directly from your book (figure 2.4 shows a portion of it).  Examine this file and become familiar with it.  Notice that the file called test.c uses the functions in the show-bytes file. This will be a common way that you will separate your code. 
+Open the *show-bytes.c* file. This is directly from your book (figure 2.4 shows a portion of it). Examine this file and become familiar with it. Notice that the file called test.c uses the functions in the show-bytes file. This will be a common way that you will separate your code. 
 
 Use make in the terminal to build these code files before you make any changes to it. Simply access this directory in your terminal and type:
 
@@ -16,7 +16,7 @@ Study the makefile to see how we can have code in 2 files and compile them toget
 
 Study the code carefully. Discuss with your neighbor: what aspects of the C language that you see are unfamiliar? If you cannot determine what they mean or what some part of the code is doing, try to find an answer or ask your instructor. 
 
-Run show-bytes and use the results to answer this question: 
+Run show-bytes and use the results to answer this question in a new text file: 
 
 * Is the machine you are running this on big-endian or little-endian? Why? Refer to section 2.1.3 of your book for help.
 
@@ -42,7 +42,7 @@ The command ‘man’ is short for manual.  It is used to provide more informati
 	man man
 
 
-Using the showbytes.c program, answer the following question:
+Using the showbytes.c program, answer the following question in your text file:
   
 * How is the storage of each byte of a string different from the storage of the bytes of an int?
 
@@ -60,7 +60,7 @@ Try changing the printf statement in the `show_bytes` function to look like this
 
 %p tells printf to print the pointer address. `start` is pointing to the zeroth %element of an array of bytes. 
 
-Answer these questions:
+Answer these questions in your text file:
 
 * What is this changed printf code doing?
 
