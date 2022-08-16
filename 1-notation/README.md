@@ -95,16 +95,6 @@ Make sure that you **write your name** in a comment at the top of the file. You
 are expected to do this for every code file in this course (and there are points
 allocated for it in homework assignments!).
 
-	- Please open [this reference from cplusplus.com](http://www.cplusplus.com/reference/cstdio/printf/). Look at the code and the output from running the bin_hex program to see how the code has used the - flag, a width of 21, a length specifier appropriate for each type, and a specifier of u because all of these data types are unsigned.
-		
-	- The macro called *sizeof* returns the number of bytes used for a particular data type by the compiler on the particular hardware where the program is compiled and run.
-	
-	- The capitalized variables such as UCHAR_MAX are found in a file called limits.h, which is documented in [this reference](https://www.tutorialspoint.com/c_standard_library/limits_h.htm) and many others that you might find by searching for C limits.h.
-	
-**You need to complete** *c_stype_sizes()* in test.c for signed data types char, short, int, and long. In this case these data types have both a maximum and a minimum negative value. Find out what the named constants for the maximum and minimum of each type should be and use them.
-
-3. This code currently prints out a table of the binary and hexadecimal values for the first 16 positive unsigned decimal numbers, 0 through 15. This is a handy table to have as you work with hexadecimal numbers (often shorten to hex). Note that the function `hex_table` in hex.c uses another function in `binary_convert.c` called `nibble_to_bin_str` to accomplish this. Since all possible values for a nibble (half a byte) are being printed, this function `hex_table` is thoroughly testing **what should work properly** when calling `nibble_to_bin_str`.
-
 ### Notes 
 
 - The macro `sizeof(TYPE)` returns the number of bytes used for a particular
@@ -156,3 +146,4 @@ You should comment each function you write like you would for Java:
 [limits.h reference in wikibooks](https://en.wikibooks.org/wiki/C_Programming/limits.h)
 
 [limits.h reference in tutorialspoint](https://www.tutorialspoint.com/c_standard_library/limits_h.htm)
+
