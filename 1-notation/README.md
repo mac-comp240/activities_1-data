@@ -33,8 +33,8 @@ There are three files of code for this activity:
 
 - `binary_convert.c` and `binary_convert.h`
     - utility functions to create strings of binary representations of numbers
-- activity.c
-    - the source file which contains the main method, and in which you will
+- `activity.c`
+    - the source file which contains the main method, in which you will
       complete your tasks
 
 ## A library of functions
