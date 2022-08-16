@@ -119,17 +119,11 @@ free(bin_str);
   `bin_str` again, but must do so by calling one of the functions in
   `binary_convert.h` to re-populate it with a new value.
 
-## Compile as you work 
-
-As you change your source file, you will need to rebuild your executable by
-typing `make` in the terminal. If your code has errors, the gcc compiler will
-print those out to the terminal.
-
 ### Feeling stuck?
 
 Talk to your neighbors or ask for help by raising your hand!
 
-## Commenting as documentation
+### Commenting as documentation
 
 You should comment each function you write like you would for Java:
 
@@ -139,7 +133,7 @@ You should comment each function you write like you would for Java:
 	 * javadoc comments
 	 */
 
-### References
+## References
 
 [printf format specifier reference from cplusplus.com](http://www.cplusplus.com/reference/cstdio/printf/).
 
