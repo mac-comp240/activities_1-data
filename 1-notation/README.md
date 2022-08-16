@@ -117,14 +117,10 @@ allocated for it in homework assignments!).
 ```
 // declare the string pointer
 char * bin_str; 
-```
 
-```
 // create the string by calling a function from `binary_convert.h`
 bin_str = nibble_to_bin_str(i); 
-```
 
-```
 // After using bin_str, remove it from memory. 
 free(bin_str); 
 ``` 
