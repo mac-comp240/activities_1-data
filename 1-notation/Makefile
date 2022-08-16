@@ -2,8 +2,8 @@
 
 CC=gcc -std=c99
 
-bin_hex: hex.c test.c binary_convert.c
-	${CC} -o bin_hex binary_convert.c hex.c test.c
+bin_hex: activity.c binary_convert.c
+	${CC} -o bin_hex binary_convert.c activity.c
 
 clean:
 	rm -f bin_hex
