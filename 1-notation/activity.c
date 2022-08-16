@@ -9,8 +9,7 @@
 
 /** TODO TASK 1:
     * Write print statements to print the max values and sizes of each unsigned
-    * integer type (short, int, long, long long), based on the example of
-    * unsigned char.
+    * integer type (short, int, long), based on the example of unsigned char.
     * 
     * References: printf format specifier, limits.h
     */
@@ -23,8 +22,8 @@ void utype_sizes() {
 
 /** TODO TASK 2:
     * Write a function called 'stype_sizes()' to print the *min and max* values
-    * of each signed integer type (char, short, int, long, long long), based on
-    * similar to the function above.
+    * of each signed integer type (char, short, int, long), based on similar to
+    * the function above.
     * 
     * References: printf format specifier, limits.h
     */
