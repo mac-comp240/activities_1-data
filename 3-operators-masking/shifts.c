@@ -11,7 +11,7 @@
 int main() {
 	
 	unsigned char x = 0xC3;
-	signed char y = x;
+	signed char y = (char) x;
 	unsigned char uresult;  // for result of logical operation
 	char sresult;           // for result of arithmetic operation
 	
@@ -44,7 +44,7 @@ int main() {
 	free(bin_str_x);
 	//////////////////////// end first example
 	
-	// continue with more examples here of your choosing
+	// continue with more examples here
 	
 	return 0;
 }
