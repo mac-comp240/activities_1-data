@@ -30,9 +30,7 @@ string with the binary representation of a given C integral data type value.
 
 # 1: Bit-wise vs. logical operators
 
-**Code file you create:** 
-
-        bit_logical.c
+**Code file you create:** `bit_logical.c`
 
 Create a new C code file named `bit_logical.c`. Use examples from past code
 files to help determine the syntax of your headers and main function.
