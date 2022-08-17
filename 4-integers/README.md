@@ -54,7 +54,7 @@ Choose some values to illustrate how this problem can be created and why you
 should avoid it.
 
 
-# 3: Integral values have limits
+## 3: Integral values have limits
 
 The last part of the main function in `test_tc.c`, commented out, prints the
 table of representations of signed char values from -64 to +63. Uncomment it and
