@@ -194,24 +194,6 @@ different shift operations on single-byte quantities. Practice on paper: convert
 each value from hexadecimal to binary, perform the shit, and convert back to
 hex.
 
-This example is not as much as test as it is an observation of how shifting
-works. However, as in the previous example, you could use asserts to test if you
-understand what the result from a shift should be.
-
-### Note
-
-The important thing to note here is that unsigned numbers are shifted right logically and that signed numbers are shifted right arithmetically.
-
-First, note that you can get the value 0XC3 as shown in the table by declaring a variable like this:
-
-``` unsigned char x = 0xC3; ```
-
-Next, note what happens when we cast that value to a signed variable instead:
-
-``` char y = (char) x; ``` 
-
-Use x for the logical shifts and y for the arithmetic shifts- the first example is given to you in the code. Try some of the rest in the following table:
-
 <table> <tr> <td>x</td> <td></td> <td>x&lt&lt3</td> <td></td> <td>Logical
 x>>2</td> <td></td> <td>Arithmetic y>>2</td> <td></td> </tr> <tr> <td>Hex</td>
 <td>Binary</td> <td>Hex</td> <td>Binary</td> <td>Hex</td> <td>Binary</td>
@@ -222,80 +204,44 @@ x>>2</td> <td></td> <td>Arithmetic y>>2</td> <td></td> </tr> <tr> <td>Hex</td>
 <td></td> </tr> <tr> <td>0x66</td> <td></td> <td></td> <td></td> <td></td>
 <td></td> <td></td> <td></td> </tr> </table>
 
+This example is not as much as test as it is an observation of how shifting
+works. However, as in the previous example, you could use asserts to test if you
+understand what the result from a shift should be.
 
-Not how we use the functions in binary_convert.h/c in the shifts.c code to print out the binary representation of unsigned char values and char values. Convince yourself that you understand the bit patterns of each. Then shift each one and use your function to print out the result (hint: do right shift by 2 as the problem suggests, then try other shifts if you wish). Note that the behavior of the shifting done is different for the signed value than for the unsigned value. 
+### Work smart
 
-## Work smart
+You probably are considering a lot of cutting and pasting of code for each of
+the examples that you chose to try. Instead, develop a function that can take in
+x and y and essentially does what the first example code does. Then call that
+function. You will need to add a function declaration at the top of your file
+for your new function.
 
-You probably are considering a lot of cutting and pasting of code for each of the examples that you chose to try. Instead, develop a function that can take in x and y and essentially does what the first example code does. Then use a call to that function as a test. You will need to add a function declaration at the top of your file for your new function.
+### Work smarter
 
-## Update all parts of the Makefile!
+Improve your helper function to have it take in 2 more parameters: how much to
+shift left and how much to shift right.
 
-Make sure to add the shifts program from shifts.c to your Makefile, including in all: so that `make all`  or `make` will work. Also add the shifts program in the rm -f line of the clean: target directive, so that `make clean` will remove the shifts program as well as the bit_logical program.
-
-Eventually this makefile should work for all the different programs you are making for each part of this activity.
-
-## Work smarter
-
-Improve your print function to have it take in 2 more parameters: how much to shift the unsigned value left and how much to shift the signed values right.
-
-
-# Problem 3: Masking of bits
+# 3: Masking of bits
 
 Now let's try working with masks, which are bit patterns, typically of a series of ones followed by a series of zeros, or vise versa, or all ones and all zeroes.  
 
-## The problem:
+## Problem Definition
 
-Given an unsigned int x and an unsigned int y, determine the C expression that:
+Given an unsigned int x and an unsigned int y, determine the C expression that
+will yield an unsigned int consisting of the least significant byte of x and the
+remaining bytes of y.
 
-Will yield an unsigned int consisting of the least significant byte of x and the remaining bytes of y.
+Write a function to produce this result and test it with several different
+inputs of x and y. Your function should return the result. Put your code in a
+new C file called `mask.c`.
 
-Use this expression in a function and test it with several different inputs of x and y.
+The approach to this problem is to consider what the binary representation is
+for integers like 0xFF. You should make an unsigned int called `mask` and use it
+with the bitwise operators & and | and x and y in your expression. You should
+not use bit-shifting for this task.
 
-The approach to this problem is to consider what the binary representation is for the integers like 0xFF and ~0xFF.  Test your expression by creating new C file called mask.c. 
+Test your function on several values in `main()`. Don't forget our mantra about
+testing: try 0, 1, the maximum unsigned int, and several values in between.
+Using hexadecimal numbers for the tests will make developing assertions easier.
 
-Create a function that takes the two values, x and y, as parameters, executes the expression, and prints the result in hexadecimal form. You should make an unsigned int called a mask and use it with the bitwise operators & and | and x and y in your expression.
-
-**Note: You should refrain from using shifting for this task.**
-
-The test your function on several values in main(). Don't forget our mantra about testing: try 0, 1, the maximum unsigned int, and several values in between.
-
-### Need to think about the testing carefully 
-
-The testing is different here than in activity 1, because we have 2 input values to the function called *least1x_most3y*. The above mentioned mantra now applies to each parameter, x and y, and combinations of them. The number of tests needed grows quickly in this circumstance!
-
-Another thing to consider in this case is that the boundary, or edge cases are at the byte level. In other words, the 0,1, and max cases for x might be these:
-
-0x0, 0x1, 0xFF, 0xFFFFFF00, and 0xFFFFFFFF
-
-And for y (or x) we might want to use something with distinctive bytes, such as this:
-
-0xABCDEF00
-
-Also note that using hexadecimal numbers for the tests makes developing assertions easier.
-
-*Make sure to add mask.c and its executable to your Makefile (all and clean too!).*
-
-## A challenge if you want to keep trying masks and tests
-
-You could try developing other expressions that provide other patterns of bytes from each of the inputs. Then develop test for them.
-
-# Check your work
-
-## Get the code solution
-
-Check the solution directory to get the completed version of the code for this activity.
-
-To try out this version, you can do this on the command line of the terminal:
-
-    cd solution
-
-Then you will be in the solution directory. You can then use make to compile this version.
-
-To get back out of the solution directory, you can do the following:
-    cd ..
-	
-### Warning 
-
-We will not always provide solutions for every activity. This is likely the last time, since you now have quite a few examples of C code.
- 
+*Make sure to add `mask.c` and its executable to your Makefile (all and clean too!)*
