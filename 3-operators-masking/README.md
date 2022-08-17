@@ -1,39 +1,21 @@
-# Data Activity 3: Operators and masking
+# Data Activity 3: Operators and Masking
 
 Folder: `3-operators-masking`
 
-Here you will practice creating a whole C code file and you will update a Makefile that will build more than one executable, one for each problem described in the pages of this activity. First, a couple of notes, and then the first problem you will work on.
+In this activity, you will:
+- Create a C source code file
+- Update a Makefile to build more than one executable
 
-### Note: what a Makefile should always do
+### What should a Makefile do?
 
-For practice for official grading, we expect to be able to type the following in your directory and build all of the code at once:
+For all of your code in this course, we expect to be able to type the following
+in your directory and build all of the code at once:
 
   make clean
 
   make all
   
 You will work on ensuring this in this activity.
-
-### Note: included files binary_convert.c, binary_convert.h
-
-To assist with checking the values resulting from the operations that you will attempt in these problems, we have included files called *binary_convert.c*  and *binary_convert.h* from Data activity 1 that have functions that can build up a string of the binary representation of given C integral data type value. 
-
-
-# Problem 1
-
-**Code file you create yourself:** 
-
-        bit_logical.c
-
-Right-click on the folder named 3-operators-masking or use the File menu to create this new C code file, named bit_logical.c. To get started considering what needs to be in this file, you can look at the original "hello world" example from early in the course- it is in the folder called hello. You can also look at the starter code for the next 2 problems. These are the files shifts.c and mask.c.
-
-## Observing bit-wise vs. logical operators.
-
-Write C code in a file with a main() function in it that demonstrates the result of doing the operations on values, as described below (in a section labeled The Problem). Call your file *bit_logical.c*  (because here you will observe the difference between the bit-wise operators (&, |, and ~) and the logical operators (&&, ||, !). 
-
-Note the information about assertions below the problem statement. Try using them in your code to more easily check if the answers match what you expect to get. However, as you will see, starting with printing the binary representations as strings can initially be useful to visualize how the operators work.
-
-## For this and the following exercises, please complete a Makefile 
 
 There is a very basic start in the makefile provided. You will need to do the following:
 
@@ -74,20 +56,36 @@ The above article states that C11 is the latest ANSI standard, but in fact there
 
 You may also see examples where we have use `-std=c99`. This was a well-used standard for many years and most code we will ever write probably adheres to that standard. So we will often use this.
 
-## Some notes
+### Note: included files `binary_convert.c`, `binary_convert.h`
 
-- Always have the habit of placing a brief description and your name in the comment heading at the very top of a .c code file.
-- The main() function should return 0 when it completes successfully at the end.
-- You should be careful to choose the correct type for the variables x and y mentioned in the problem below.
-- An effective way to test whether a value seems correct is to use asserts instead of printing. Be sure to try this eventually.
+To assist with checking the values resulting from the operations that you will
+attempt in these problems, we have included files called `binary_convert.c`  and
+`binary_convert.h` from Data Activity 1, which have functions that return a
+string with the binary representation of a given C integral data type value. 
 
-As you work, please note that there is typically no need to 'clean' each time you use make. **The beauty and wonder of make is that it knows when a .c or .h file has changed and that the program needs to be re-compiled.** Therefore, you simply need to type `make` by itself after you have changed a .c or .h file.
 
-## The problem
+# 1: Bit-wise vs. logical operators
 
-Suppose x and y are bytes that have the values 0x66 and 0x39 respectively. Consider what the result of the following operations are and verify them in a main function.
+**Code file you create:** 
 
-**Choose the data type that is one byte long and unsigned and convert the original values and the result of these operations into strings representing the binary value so that you can see how the operators work**
+        bit_logical.c
+
+Create a new C code file named `bit_logical.c`. Use examples from past code
+files to help determine the syntax of your headers and main function.
+
+You will observe the difference between the bit-wise operators (&, |, and ~) and
+the logical operators (&&, ||, !) by writing code that uses both. 
+
+Note the section on `assert()` below--we use these in C to test that our code
+functions, and implementing a testing suite is part of your first homework
+assignment. Use them in this activity to check that you have correctly computed
+the results of each operation.
+
+## Problem Definition
+
+Suppose `x` and `y` are **unsigned single bytes** that have the values 0x66 and
+0x39 respectively. Consider what the result of the following operations are and
+verify them in a main function.
 
 <table border="0"> <tr> <th>Expression</th> <th>Value</th> </tr> <tr> <td>x &
 y</td> <td></td> </tr> <tr> <td>x | y</td> <td></td> </tr> <tr> <td>~x | ~y</td>
@@ -95,9 +93,11 @@ y</td> <td></td> </tr> <tr> <td>x | y</td> <td></td> </tr> <tr> <td>~x | ~y</td>
 <td></td> </tr> <tr> <td>x || y</td> <td></td> </tr> <tr> <td>!x || !y</td>
 <td></td> </tr> <tr> <td>x && ~y</td> <td></td> </tr> </table>
 
-#### Suggested initial printf output format 
+### `printf` output format 
 
-You could start by using the functions in binary_convert.h/c to print the bytes and the operation out like this so that you can see each bitwise operation result along with its hex value:
+You could start by using the functions in `binary_convert.h/c` to print the
+bytes and the operation so that you can see each bitwise operation result along
+with its hex value:
 
 ```
 0110 0110 & 
@@ -116,89 +116,87 @@ You could start by using the functions in binary_convert.h/c to print the bytes 
 1101 1111     df
 ```
 
-Then practice adding asserts along with the prints of the results, as explained below. After the first 3 cases above, the rest are fairly easy to simply write asserts for (instead of printing the result). You will need to recall what the result of a logical operation like &&, ||, or ! returns in order to test it properly.
-
-Here is the code to generate the output for the first of the 3 examples shown above (you will need to create variables x, y, and result first):
-
-```
-// do 5 steps for each bitwise operation 
-// 1. get a result
-result = x & y;
-// 2. convert to a string
-bin_str_result = uchar_to_bin_str(result);
-// 3. print x, y, and result
-printf("  %s\n", bin_str_x);          
-printf("& %s\n", bin_str_y);
-printf("  ---------\n"); 
-printf("  %s\t%x\n\n", bin_str_result, result);
-// 4. free up memory for the result string, because we will create more
-free(bin_str_result);
-// 5. assert to test the result
-assert(result == 0x20); 
-```
+Then practice adding asserts along with the prints of the results, as explained
+below. 
 
 ### Using assertions in C
 
-The document linked below provides some explanation  of  how you can use a construct called an assertion to check that certain conditions are true before your code continues executing. As you can see from it, it can be used to make sure that conditions you expect about values passed to functions are true.  For example, even when you document that a parameter value should be greater than 0, it is a good idea to check it yourself.
+[This tutorial](http://ptolemy.eecs.berkeley.edu/~johnr/tutorials/assertions.html) provides an overview of how to use assert statements.
 
-Look at [this tutorial](http://ptolemy.eecs.berkeley.edu/~johnr/tutorials/assertions.html) for more information about using asserts.
+We can use assertions to test whether the result of executing our code is what
+we expect. This is helpful when running a large number of tests, where we don't
+want to deal with a hundred or more lines of printed output.
 
-We can also use assertions to test whether the result of executing our code is what we expect.  When we run a large number of tests, this can be more helpful than printing out a great deal of output.  Here is an example: suppose we add the following code to the main of bit_logical.c file (you likely have started on this- below is a brief portion for one of the examples):
+An example of an assert statement in code is as follows:
 
 ```
   #include <assert.h>
-  //… 
+
   int main() { 
-    unsigned char x = 0x66; 
-    unsigned char y = 0x39; 
-    unsigned char result;  // holds result of operation
-    result = x & y;
-    //assert(result == 0x20);  // this should pass
+
+      // set-up code omitted //
+
+    result = x && y;
+    //assert(result == 0x1);  // this should pass
     assert(result == 0);  // this should fail
 
     return 0;  // signifies program completed successfully 
   }
 ```
 
-Try this with your own code- see what happens when the assertion fails and note that you get a message with a line number of the code.  Uncomment the one that should pass and comment out the one that should fail. When the assertion passes, the code continues to execute.
+Try this with your own code: note that when the assertion fails, you get a
+message with a line number of the code, and when the assertion passes, the code
+continues to execute.
 
-Using asserts can be a way to test out a function that you write to be certain that it is working across a range of values that could be passed into it.  You can do this by executing the function and asserting whether the result is what you expect.  It will be good (and expected) practice to do this for your homework.  You can try it for the code files you write for this activity.
+Using asserts is a good way of testing your code functionality, and it is
+expected practice for your homework assignments.
 
-Having asserts in your code instead of print statements means that you can avoid the manual hassle of looking through large amounts of printout to check your code for accuracy.
+### Notes
 
-# Problem 2: Shifting
+- Place your name and a description of your code in a comment at the top of your
+  source file
+- `main()` should return 0 when it completes successfully
+- Watch your types! Which are the correct ones for `x` and `y`, below?
+- You can use print statements and functions from `binary_convert.c` as you work
+  on your code, but the final submission must use assertions
+
+As you work, please note that there is typically no need to 'clean' each time
+you use make. **The beauty and wonder of make is that it knows when a .c or .h
+file has changed and that the program needs to be re-compiled.** Therefore, you
+simply need to type `make` by itself after you have changed a .c or .h file.
+
+# 2: Shifting
 
 Here you will see the actual results of shifting unsigned and signed numbers.
-
-Read through this whole page, examining the code and the Makefile, before you begin changing them.
+Read through this whole page, examining the code and the Makefile, before you
+begin changing them.
 
 ### Using shift operators
 
 **target executable program name for Makefile:** 
 shifts 
 
-**starting C code file provided:** shifts.c
+**provided starter code:** `shifts.c`
 
-Complete the C code for the following problem in the file called *shifts.c*.  In the Makefile, have a target called **shifts** as the executable program. Use your own example input that should result in the use of a logical right shift in one case and and arithmetic right shift in another case.  Since the problem states that you will use 1-byte values, you will want  your function to work with unsigned char input and signed char input.
+You are adding this target to your existing Makefile, rather than writing a new
+one. Makefiles can handle building multiple separate executables; which parts of
+the file will need to change in order for this executable to be built? Use the
+existing target as an example.
+
+Make sure that your function works for both signed and unsigned one-byte values.
 
 (Note that this is practice problem 2.16 in your book.)
 
-### Makefiles can build multiple executable programs.
+## Problem Definition
 
-Include the new shifts.c code file that you will complete your Makefile as well. Add a target executable (shifts), a colon, what it depends on, and indented with a tab on the next line the command needed to build the executable from the code.
+There is initial code in `shifts.c` to model the code you will write, examining
+different shift operations on single-byte quantities. Practice on paper: convert
+each value from hexadecimal to binary, perform the shit, and convert back to
+hex.
 
-**Note:** you will be using the functions in binary_convert.c/h, so your shifts target depends on shifts.c and binary_convert.c and binary convert.h.
-
-
-### The problem:
-
-The initial code in shifts.c is designed to help you ill in the table below showing the effect of the different shift operations on single-byte quantities. The best way to think about the operations is to work with binary representations. First you could do this by hand on paper if you wish: Convert the initial values to binary, perform the shifts, and then convert back to hexadecimal. Each of the answers should be printed as 2 hexadecimal digits and 8 binary digits.
-
-We are using printing rather than asserts for this particular problem because it is helpful at the onset of learning about these shifts to see exactly how they work by observing the result of a particular shift in hex an its binary form.
-
-This example is not as much as test as it is an observation of how shifting works. However, as in the previous example, you could use asserts to test if you understand what the result from a shift should be.
-
-Your ultimate goal is to write code to generate the results of these operations in the file called shifts.c that contains a main() and uses functions from binary_convert.h/c, which is already provided.
+This example is not as much as test as it is an observation of how shifting
+works. However, as in the previous example, you could use asserts to test if you
+understand what the result from a shift should be.
 
 ### Note
 
@@ -210,7 +208,7 @@ First, note that you can get the value 0XC3 as shown in the table by declaring a
 
 Next, note what happens when we cast that value to a signed variable instead:
 
-``` signed char y = x;  // signed keyword is not strictly necessary ```
+``` char y = (char) x; ``` 
 
 Use x for the logical shifts and y for the arithmetic shifts- the first example is given to you in the code. Try some of the rest in the following table:
 
