@@ -15,46 +15,10 @@ in your directory and build all of the code at once:
 
   make all
   
-You will work on ensuring this in this activity.
-
-There is a very basic start in the makefile provided. You will need to do the following:
-
-1. Fill in the rest of target executable program called `bit_logical` that corresponds with your *bit_logical.c* file.  Note that the line that starts with all:  contains this target. You will add more executables to this line as you complete each problem in this activity. To complete this, you will need to add a line below the line already given with the target (bit_logical), a colon (:), and the C files that the target depends on (bit_logical.c, binary_convert.c, binary_convert.h). The line below this must start with a tab, and then contain the directive to compile C code file into the target executable, using the gcc compiler. In this case, this will look like this:
-
-	${CC} -o bit_logical bit_logical.c binary_convert.c
-
-2. Then complete the `clean:` target to your Makefile. A typical way to do this is to remove the executable targets. So to start, you can have a line like this that begins with a tab:
-
-	rm -f bit_logical
-		
-The -f in the rm (remove) command above indicates that there is no need to return an error message if that file does not exist. At the terminal, you can type this to see more about the rm command:
-
-    man rm
-
-As you work on the other problems in this activity, you will continue adding new targets to the Makefile and you will update the `all:` target with them, and you will also need to update the `clean:` target to remove each of the executable files.
-
-**Warning:** You cannot do this next suggestion yet until you have a bit_logical.c file with a functioning main() program in it!!!
-
-As you work, you should practice typing
-
-  `make all`
-  
-to create your executables. Note, however, that because all is the first target,
-you can also type:
-
-  `make`
-
-## The flags to the gcc compiler
-
-You may be wondering about this line in the Makefile:
-
-	CC=gcc -std=C11
-
-This is setting up a definition that will replace `${CC}` with the above when compiling the program. The -std=c11 flag to gcc tells the compiler that it can accept code that adheres to the ANSI C standard published in 2011. There have been many standards and dialects of those standards developed over the years (gcc itself has many of its own dialects). If you enjoy finding out about the historical aspects of the C language and how a language changes over time, please read this [article about the multitude of C standards](https://opensourceforu.com/2017/04/different-c-standards-story-c/).
-
-The above article states that C11 is the latest ANSI standard, but in fact there is a new one now that cam out in 2017-2018. So gcc now supports a -std=c17. We likely will not need any of the new features, so we will choose to stay one standard behind for now.
-
-You may also see examples where we have use `-std=c99`. This was a well-used standard for many years and most code we will ever write probably adheres to that standard. So we will often use this.
+You will work on ensuring this in this activity. Recall that Makefiles require a
+tab character before a command under a given target, not spaces. If you have
+trouble getting your Makefile to work and it *looks* correct, start by checking
+whether you have a tab or spaces!
 
 ### Note: included files `binary_convert.c`, `binary_convert.h`
 
@@ -223,6 +187,11 @@ shift left and how much to shift right.
 
 # 3: Masking of bits
 
+**target executable program name for Makefile:** 
+mask 
+
+**provided starter code:** `mask.c`
+
 Now let's try working with masks, which are bit patterns, typically of a series of ones followed by a series of zeros, or vise versa, or all ones and all zeroes.  
 
 ## Problem Definition
@@ -233,7 +202,7 @@ remaining bytes of y.
 
 Write a function to produce this result and test it with several different
 inputs of x and y. Your function should return the result. Put your code in a
-new C file called `mask.c`.
+the C file called `mask.c`.
 
 The approach to this problem is to consider what the binary representation is
 for integers like 0xFF. You should make an unsigned int called `mask` and use it
@@ -243,5 +212,3 @@ not use bit-shifting for this task.
 Test your function on several values in `main()`. Don't forget our mantra about
 testing: try 0, 1, the maximum unsigned int, and several values in between.
 Using hexadecimal numbers for the tests will make developing assertions easier.
-
-*Make sure to add `mask.c` and its executable to your Makefile (all and clean too!)*
