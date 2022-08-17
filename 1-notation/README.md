@@ -7,8 +7,6 @@ This is an introduction to
 * Operations on integers and alternative representations of integer values.
 * The use of function prototypes in C header files (.h files).
 
-# Data type representation
-
 You will complete several tasks that involve different ways to represent integer
 data.
 
