@@ -28,7 +28,7 @@ attempt in these problems, we have included files called `binary_convert.c`  and
 string with the binary representation of a given C integral data type value. 
 
 
-# 1: Bit-wise vs. logical operators
+## 1: Bit-wise vs. logical operators
 
 **Code file you create:** `bit_logical.c`
 
@@ -43,7 +43,7 @@ functions, and implementing a testing suite is part of your first homework
 assignment. Use them in this activity to check that you have correctly computed
 the results of each operation.
 
-## Problem Definition
+### Problem Definition
 
 Suppose `x` and `y` are **unsigned single bytes** that have the values 0x66 and
 0x39 respectively. Consider what the result of the following operations are and
@@ -127,29 +127,23 @@ you use make. **The beauty and wonder of make is that it knows when a .c or .h
 file has changed and that the program needs to be re-compiled.** Therefore, you
 simply need to type `make` by itself after you have changed a .c or .h file.
 
-# 2: Shifting
-
-Here you will see the actual results of shifting unsigned and signed numbers.
-Read through this whole page, examining the code and the Makefile, before you
-begin changing them.
-
-### Using shift operators
+## 2: Shifting
 
 **target executable program name for Makefile:** 
 shifts 
 
 **provided starter code:** `shifts.c`
 
+In this part, you will see the results of shifting unsigned and signed numbers.
+Make sure that your function works for both signed and unsigned one-byte
+values. This is taken from practice problem 2.16 in your book.
+
 You are adding this target to your existing Makefile, rather than writing a new
 one. Makefiles can handle building multiple separate executables; which parts of
 the file will need to change in order for this executable to be built? Use the
 existing target as an example.
 
-Make sure that your function works for both signed and unsigned one-byte values.
-
-(Note that this is practice problem 2.16 in your book.)
-
-## Problem Definition
+### Problem Definition
 
 There is initial code in `shifts.c` to model the code you will write, examining
 different shift operations on single-byte quantities. Practice on paper: convert
@@ -183,7 +177,7 @@ for your new function.
 Improve your helper function to have it take in 2 more parameters: how much to
 shift left and how much to shift right.
 
-# 3: Masking of bits
+## 3: Masking of bits
 
 **target executable program name for Makefile:** 
 mask 
@@ -192,7 +186,7 @@ mask
 
 Now let's try working with masks, which are bit patterns, typically of a series of ones followed by a series of zeros, or vise versa, or all ones and all zeroes.  
 
-## Problem Definition
+### Problem Definition
 
 Given an unsigned int x and an unsigned int y, determine the C expression that
 will yield an unsigned int consisting of the least significant byte of x and the
