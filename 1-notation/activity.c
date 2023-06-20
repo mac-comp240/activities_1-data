@@ -15,9 +15,7 @@
     */
 void utype_sizes() {
 
-	printf("unsigned char | max: %hhu | size: %zu\n", 
-	    (unsigned char) UCHAR_MAX,
-	    sizeof(unsigned char));
+	printf("unsigned char | max: %hu | size: %zu\n", (unsigned char) UCHAR_MAX, sizeof(unsigned char));
 }
 
 /** TODO TASK 2:
